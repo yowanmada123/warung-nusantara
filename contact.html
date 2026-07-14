@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>contact – Warung Nusantara</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--red:#dc2626;--orange:#ea580c;--dark:#1a0a00;--cream:#fef9f0;--font:'Poppins',sans-serif;--radius:14px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font);background:var(--cream);color:#1e293b;}
+a{text-decoration:none;color:inherit;}ul{list-style:none;}button{font-family:var(--font);cursor:pointer;}img{display:block;max-width:100%;}
+.container{max-width:1200px;margin:0 auto;padding:0 24px;}
+nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.97);border-bottom:1px solid #f0e6d3;}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.logo{font-size:1.3rem;font-weight:800;color:var(--dark);}
+.logo span{color:var(--red);}
+.nav-links{display:flex;gap:4px;}
+.nav-links a{padding:7px 13px;border-radius:8px;font-size:.85rem;font-weight:500;color:#475569;transition:all .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--red);background:rgba(220,38,38,.06);}
+.btn{display:inline-flex;align-items:center;gap:6px;background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:25px;font-size:.86rem;font-weight:600;cursor:pointer;transition:all .2s;}
+.btn:hover{background:var(--orange);}
+.btn-outline{background:#fff;color:var(--red);border:2px solid var(--red);}
+.btn-outline:hover{background:var(--red);color:#fff;}
+.page-hero{background:linear-gradient(135deg,var(--dark),#7c2d12);padding:50px 0;color:#fff;text-align:center;}
+.page-hero h1{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;margin-bottom:8px;}
+.page-hero p{color:rgba(255,255,255,.6);font-size:.88rem;}
+.breadcrumb{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:10px;font-size:.75rem;color:rgba(255,255,255,.45);}
+.breadcrumb a{color:rgba(255,255,255,.6);}
+.section{padding:56px 0;}
+.bg-white{background:#fff;}
+.form-group{margin-bottom:14px;}
+.form-label{display:block;font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:#374151;margin-bottom:5px;}
+.form-control{width:100%;border:1.5px solid #e2e8f0;border-radius:8px;padding:10px 13px;font-size:.87rem;font-family:var(--font);outline:none;color:#1e293b;transition:border-color .2s;}
+.form-control:focus{border-color:var(--red);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
+.card{background:#fff;border-radius:var(--radius);border:1px solid #f0e6d3;padding:24px;}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;}
+.menu-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid #f0e6d3;transition:all .25s;}
+.menu-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.09);}
+.menu-img{height:180px;overflow:hidden;position:relative;}
+.menu-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.menu-card:hover .menu-img img{transform:scale(1.05);}
+.menu-badge{position:absolute;top:9px;left:9px;background:var(--red);color:#fff;font-size:.63rem;font-weight:700;padding:2px 8px;border-radius:20px;}
+.menu-info{padding:13px;}
+.menu-name{font-size:.92rem;font-weight:700;margin-bottom:4px;}
+.menu-desc{font-size:.77rem;color:#78350f;line-height:1.5;margin-bottom:9px;}
+.menu-footer{display:flex;align-items:center;justify-content:space-between;}
+.menu-price{font-size:.97rem;font-weight:800;color:var(--red);}
+.btn-ord{background:var(--red);color:#fff;border:none;padding:6px 14px;border-radius:20px;font-size:.74rem;font-weight:600;cursor:pointer;}
+.toast-c{position:fixed;bottom:22px;left:22px;z-index:500;display:flex;flex-direction:column;gap:7px;}
+.toast{background:var(--dark);color:#fff;padding:11px 17px;border-radius:10px;font-size:.83rem;animation:fadeUp .3s;border-left:3px solid var(--red);}
+footer{background:var(--dark);color:rgba(255,255,255,.5);padding:28px 0;margin-top:60px;}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.nav-links{display:none;}.form-row{grid-template-columns:1fr;}}
+</style>
+</head><body>
+<nav><div class="nav-inner">
+  <a href="index.html" class="logo">Warung<span>Nusantara</span></a>
+  <ul class="nav-links">
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="reservasi.html">Reservasi</a></li>
+    <li><a href="about.html">Tentang</a></li>
+    <li><a href="contact.html">Kontak</a></li>
+  </ul>
+  <div style="display:flex;gap:8px"><a href="reservasi.html" class="btn btn-outline">📅 Reservasi</a><a href="menu.html" class="btn">Pesan</a></div>
+</div></nav>
+<div class="page-hero">
+  <div class="container">
+    <h1 id="ptitle">contact</h1>
+    <p id="psub">Warung Nusantara – Cita Rasa Asli Indonesia</p>
+    <div class="breadcrumb"><a href="index.html">Beranda</a><i class="fas fa-chevron-right" style="font-size:.6rem"></i><span>contact</span></div>
+  </div>
+</div>
+<div class="container" style="padding:36px 24px" id="mc"></div>
+<div class="toast-c" id="toastC"></div>
+<footer><div class="container"><div class="footer-inner"><div class="logo" style="color:#fff">Warung<span style="color:var(--orange)">Nusantara</span></div><p style="font-size:.8rem">© 2026 Warung Nusantara · Jl. Malioboro No.42 Yogyakarta · (0274) 555-1234</p></div></div></footer>
+<script>
+const PAGE='contact';
+const mc=document.getElementById('mc');
+function showToast(m){const c=document.getElementById('toastC');const el=document.createElement('div');el.className='toast';el.textContent=m;c.appendChild(el);setTimeout(()=>el.remove(),3000);}
+function fmtP(n){return'Rp '+n.toLocaleString('id-ID');}
+const MENU=[
+  {name:'Gudeg Komplit',cat:'nasi',price:35000,badge:'ANDALAN',img:'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=400&q=80',desc:'Gudeg Jogja autentik dengan ayam kampung, krecek, dan telur. Resep Mbah Sarinem sejak 1983.'},
+  {name:'Nasi Liwet Solo',cat:'nasi',price:30000,badge:null,img:'https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=400&q=80',desc:'Nasi gurih khas Solo dengan opor ayam, labu siam, dan sambal goreng ati.'},
+  {name:'Nasi Kucing',cat:'nasi',price:10000,badge:null,img:'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&q=80',desc:'Nasi porsi kecil dengan lauk pilihan. Cocok untuk camilan ringan.'},
+  {name:'Soto Betawi',cat:'sup',price:28000,badge:'POPULER',img:'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80',desc:'Kuah santan kental dengan daging sapi empuk, kentang, dan tomat segar.'},
+  {name:'Rawon Jawa',cat:'sup',price:32000,badge:'SPESIAL',img:'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400&q=80',desc:'Sup hitam khas Jawa Timur dengan kluwek dan daging sapi pilihan yang empuk.'},
+  {name:'Sop Buntut',cat:'sup',price:45000,badge:'PREMIUM',img:'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&q=80',desc:'Buntut sapi empuk dalam kuah bening rempah dengan sayuran segar.'},
+  {name:'Ayam Goreng Rempah',cat:'lauk',price:22000,badge:null,img:'https://images.unsplash.com/photo-1598103442097-8b74394b95c8?w=400&q=80',desc:'Ayam kampung goreng dengan bumbu rempah khas Nusantara yang meresap sempurna.'},
+  {name:'Tempe Bacem',cat:'lauk',price:8000,badge:null,img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=80',desc:'Tempe manis gurih khas Jawa dimasak dengan gula jawa dan bumbu bacem pilihan.'},
+  {name:'Empal Gepuk',cat:'lauk',price:25000,badge:null,img:'https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80',desc:'Daging sapi yang ditumbuk lalu digoreng dengan bumbu rempah khas Sunda.'},
+  {name:'Es Dawet Ayu',cat:'minuman',price:12000,badge:'SEGAR',img:'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&q=80',desc:'Minuman tradisional dari cendol, santan segar, dan gula jawa.'},
+  {name:'Wedang Jahe',cat:'minuman',price:10000,badge:null,img:'https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80',desc:'Minuman hangat dari jahe segar, serai, dan gula jawa.'},
+  {name:'Es Teh Tarik',cat:'minuman',price:9000,badge:null,img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80',desc:'Teh manis segar yang ditarik berkali-kali hingga berbusa.'},
+];
+
+if(PAGE==='menu'){
+  document.getElementById('ptitle').textContent='Daftar Menu';
+  document.getElementById('psub').textContent='50+ pilihan masakan tradisional Indonesia';
+  mc.innerHTML='<div style="display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap"><button onclick="filt(\'semua\',this)" style="padding:7px 18px;border-radius:20px;border:none;background:var(--red);color:#fff;font-size:.8rem;font-weight:600;cursor:pointer" class="fb">Semua</button><button onclick="filt(\'nasi\',this)" style="padding:7px 18px;border-radius:20px;border:1.5px solid #e2e8f0;background:#fff;font-size:.8rem;font-weight:600;cursor:pointer" class="fb">🍚 Nasi</button><button onclick="filt(\'sup\',this)" style="padding:7px 18px;border-radius:20px;border:1.5px solid #e2e8f0;background:#fff;font-size:.8rem;font-weight:600;cursor:pointer" class="fb">🍜 Sup & Soto</button><button onclick="filt(\'lauk\',this)" style="padding:7px 18px;border-radius:20px;border:1.5px solid #e2e8f0;background:#fff;font-size:.8rem;font-weight:600;cursor:pointer" class="fb">🍗 Lauk</button><button onclick="filt(\'minuman\',this)" style="padding:7px 18px;border-radius:20px;border:1.5px solid #e2e8f0;background:#fff;font-size:.8rem;font-weight:600;cursor:pointer" class="fb">🥤 Minuman</button></div><div class="menu-grid" id="mg"></div>';
+  renderMenu(MENU);
+}
+else if(PAGE==='reservasi'){
+  document.getElementById('ptitle').textContent='Reservasi Meja';
+  document.getElementById('psub').textContent='Pesan meja Anda sekarang, kami siap melayani';
+  mc.innerHTML=`<div style="display:grid;grid-template-columns:1fr 380px;gap:24px;align-items:start">
+    <div class="card">
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #f0e6d3">Form Reservasi Meja</h3>
+      <div class="form-row">
+        <div class="form-group"><div class="form-label">Nama Lengkap</div><input type="text" class="form-control" placeholder="Nama Anda"/></div>
+        <div class="form-group"><div class="form-label">No. Telepon / WA</div><input type="tel" class="form-control" placeholder="08xxxxxxxxxx"/></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><div class="form-label">Tanggal Kunjungan</div><input type="date" class="form-control"/></div>
+        <div class="form-group"><div class="form-label">Waktu</div>
+          <select class="form-control"><option>10:00 WIB</option><option>11:00 WIB</option><option>12:00 WIB</option><option>13:00 WIB</option><option>14:00 WIB</option><option>18:00 WIB</option><option>19:00 WIB</option><option>20:00 WIB</option><option>21:00 WIB</option></select></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><div class="form-label">Jumlah Tamu</div>
+          <select class="form-control"><option>1 orang</option><option>2 orang</option><option>3-4 orang</option><option>5-8 orang</option><option>9-15 orang</option><option>16+ orang</option></select></div>
+        <div class="form-group"><div class="form-label">Area Duduk</div>
+          <select class="form-control"><option>Indoor (AC)</option><option>Outdoor (Lesehan)</option><option>VIP Room</option><option>Terserah</option></select></div>
+      </div>
+      <div class="form-group"><div class="form-label">Acara Khusus</div>
+        <select class="form-control"><option>Makan Biasa</option><option>Ulang Tahun</option><option>Pertemuan Bisnis</option><option>Arisan</option><option>Pernikahan / Lamaran</option><option>Lainnya</option></select></div>
+      <div class="form-group"><div class="form-label">Catatan Tambahan</div><textarea class="form-control" rows="3" placeholder="Alergi makanan, kebutuhan khusus, dll..." style="resize:none"></textarea></div>
+      <button onclick="showToast('✅ Reservasi berhasil! Kami akan hubungi Anda dalam 30 menit.')" class="btn" style="width:100%;justify-content:center"><i class="fas fa-calendar-check"></i> Konfirmasi Reservasi</button>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:14px">
+        <h4 style="font-weight:700;font-size:.9rem;margin-bottom:14px;color:var(--red)">Informasi Restoran</h4>
+        ${[['fas fa-clock','Jam Buka','Senin–Jumat 10.00–22.00<br>Sabtu–Minggu 09.00–23.00'],['fas fa-map-marker-alt','Alamat','Jl. Malioboro No. 42<br>Yogyakarta 55213'],['fas fa-phone','Telepon','(0274) 555-1234<br>0812-3456-7890 (WA)'],['fas fa-users','Kapasitas','100 kursi indoor<br>60 kursi outdoor lesehan']].map(([ic,t,d])=>'<div style="display:flex;align-items:start;gap:12px;margin-bottom:12px"><i class="'+ic+'" style="color:var(--red);margin-top:2px;width:16px"></i><div><div style="font-size:.8rem;font-weight:700">'+t+'</div><div style="font-size:.78rem;color:#78350f;line-height:1.5">'+d+'</div></div></div>').join('')}
+      </div>
+      <div style="background:linear-gradient(135deg,var(--red),var(--orange));border-radius:14px;padding:20px;text-align:center;color:#fff">
+        <i class="fab fa-whatsapp" style="font-size:2rem;margin-bottom:8px;display:block"></i>
+        <div style="font-weight:700;margin-bottom:4px">Chat via WhatsApp</div>
+        <div style="font-size:.8rem;opacity:.85;margin-bottom:12px">Konfirmasi lebih cepat via WA</div>
+        <button onclick="showToast('Membuka WhatsApp...')" style="background:#fff;color:var(--red);border:none;border-radius:20px;padding:9px 20px;font-weight:700;font-size:.82rem;cursor:pointer">0812-3456-7890</button>
+      </div>
+    </div>
+  </div>`;
+}
+else if(PAGE==='about'){
+  document.getElementById('ptitle').textContent='Tentang Kami';
+  document.getElementById('psub').textContent='Menjaga warisan kuliner Indonesia sejak 1983';
+  mc.innerHTML=`
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:48px">
+      <div>
+        <span style="color:var(--red);font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:1px">Kisah Kami</span>
+        <h2 style="font-size:1.8rem;font-weight:800;margin:10px 0 16px;line-height:1.3">Tiga Generasi<br>Menjaga Cita Rasa</h2>
+        <p style="color:#555;line-height:1.85;font-size:.9rem;margin-bottom:14px">Warung Nusantara bermula dari warung kecil Mbah Sarinem di sudut Pasar Beringharjo, Yogyakarta, tahun 1983. Dengan modal seadanya dan bumbu rempah rahasia keluarga, beliau menyajikan gudeg, soto, dan masakan Jawa autentik yang membuat pelanggan ketagihan.</p>
+        <p style="color:#555;line-height:1.85;font-size:.9rem;margin-bottom:14px">Generasi kedua, Bu Rahayu (putri Mbah Sarinem), mengembangkan menu dan memindahkan warung ke lokasi yang lebih besar di Jl. Malioboro. Pelanggan setia bertambah dari ratusan menjadi ribuan.</p>
+        <p style="color:#555;line-height:1.85;font-size:.9rem;margin-bottom:24px">Kini, generasi ketiga — Mas Bayu dan Mbak Sari — mengelola restoran dengan sentuhan modern sambil tetap mempertahankan resep asli nenek mereka. Ribuan pelanggan dari seluruh Indonesia datang untuk merasakan masakan yang telah menemani tiga generasi.</p>
+        <div style="display:flex;gap:14px">
+          <a href="menu.html" class="btn"><i class="fas fa-utensils"></i> Lihat Menu</a>
+          <a href="reservasi.html" class="btn btn-outline">Reservasi Meja</a>
+        </div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=700&q=85" style="width:100%;border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.12)"/>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:40px">
+      ${[['1983','Warung kecil Mbah Sarinem buka di Pasar Beringharjo dengan 5 menu andalan'],['2001','Generasi kedua pindah ke Jl. Malioboro, tambah menu dari berbagai daerah Indonesia'],['2019','Generasi ketiga renovasi besar, tambah area outdoor dan sistem pemesanan online']].map(([y,d])=>'<div class="card"><div style="font-size:1.5rem;font-weight:800;color:var(--red);margin-bottom:6px">'+y+'</div><div style="font-size:.84rem;color:#555;line-height:1.65">'+d+'</div></div>').join('')}
+    </div>
+    <div style="background:linear-gradient(135deg,var(--dark),#7c2d12);border-radius:16px;padding:36px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;text-align:center">
+      ${[['50+','Menu Tradisional'],['25K+','Pelanggan Setia'],['40+','Tahun Berdiri'],['4.9★','Rating Google']].map(([n,l])=>'<div style="border-right:1px solid rgba(255,255,255,.1);padding:16px"><div style="font-size:1.7rem;font-weight:800;color:#fb923c">'+n+'</div><div style="font-size:.74rem;color:rgba(255,255,255,.5);margin-top:3px">'+l+'</div></div>').join('')}
+    </div>
+  `;
+}
+else if(PAGE==='contact'){
+  document.getElementById('ptitle').textContent='Kontak Kami';
+  document.getElementById('psub').textContent='Kami siap melayani Anda setiap hari';
+  mc.innerHTML=`
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+      <div class="card">
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:18px">Kirim Pesan</h3>
+        <div class="form-row">
+          <div class="form-group"><div class="form-label">Nama</div><input class="form-control" type="text" placeholder="Nama Anda"/></div>
+          <div class="form-group"><div class="form-label">Email</div><input class="form-control" type="email" placeholder="email@contoh.com"/></div>
+        </div>
+        <div class="form-group"><div class="form-label">Subjek</div>
+          <select class="form-control"><option>Pertanyaan Umum</option><option>Reservasi Grup</option><option>Catering & Event</option><option>Franchise</option><option>Saran & Keluhan</option></select></div>
+        <div class="form-group"><div class="form-label">Pesan</div><textarea class="form-control" rows="5" placeholder="Tulis pesan Anda..." style="resize:none"></textarea></div>
+        <button onclick="showToast('✅ Pesan terkirim! Kami akan balas dalam 24 jam.')" class="btn" style="width:100%;justify-content:center"><i class="fas fa-paper-plane"></i> Kirim Pesan</button>
+      </div>
+      <div>
+        ${[['fas fa-map-marker-alt','Alamat','Jl. Malioboro No. 42, Yogyakarta 55213','Dekat Stasiun Tugu Yogyakarta'],['fas fa-phone','Telepon','(0274) 555-1234','Senin–Minggu 09.00–22.00'],['fab fa-whatsapp','WhatsApp','0812-3456-7890','Chat untuk pemesanan & reservasi'],['fas fa-envelope','Email','info@warungnusantara.id','Dibalas dalam 1 hari kerja'],['fas fa-clock','Jam Operasional','Buka Setiap Hari','Senin–Jum: 10.00–22.00 | Sab–Min: 09.00–23.00']].map(([ic,t,v,s])=>'<div class="card" style="margin-bottom:10px;display:flex;align-items:center;gap:14px"><div style="width:42px;height:42px;border-radius:12px;background:rgba(220,38,38,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="'+ic+'" style="color:var(--red)"></i></div><div><div style="font-weight:700;font-size:.84rem">'+t+'</div><div style="font-size:.86rem;color:var(--red);font-weight:600">'+v+'</div><div style="font-size:.74rem;color:#94a3b8">'+s+'</div></div></div>').join('')}
+      </div>
+    </div>
+  `;
+}
+
+function renderMenu(list){
+  const el=document.getElementById('mg');
+  if(!el)return;
+  el.innerHTML=list.map(m=>'<div class="menu-card"><div class="menu-img"><img src="'+m.img+'" alt="'+m.name+'" loading="lazy"/>'+(m.badge?'<span class="menu-badge">'+m.badge+'</span>':'')+'</div><div class="menu-info"><div class="menu-name">'+m.name+'</div><div class="menu-desc">'+m.desc+'</div><div class="menu-footer"><div class="menu-price">'+fmtP(m.price)+'</div><button class="btn-ord" onclick="showToast(\'✅ '+m.name+' ditambahkan!\')">Pesan</button></div></div></div>').join('');
+}
+function filt(cat,el){
+  document.querySelectorAll('.fb').forEach(b=>{b.style.background='#fff';b.style.color='#475569';b.style.border='1.5px solid #e2e8f0';});
+  el.style.background='var(--red)';el.style.color='#fff';el.style.border='none';
+  renderMenu(cat==='semua'?MENU:MENU.filter(m=>m.cat===cat));
+}
+</script>
+</body></html>

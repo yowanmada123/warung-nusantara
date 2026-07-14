@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Warung Nusantara – Cita Rasa Asli Indonesia</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--red:#dc2626;--orange:#ea580c;--dark:#1a0a00;--cream:#fef9f0;--font:'Poppins',sans-serif;--radius:14px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font);background:var(--cream);color:#1e293b;}
+a{text-decoration:none;color:inherit;}ul{list-style:none;}button{font-family:var(--font);cursor:pointer;}img{display:block;max-width:100%;}
+.container{max-width:1200px;margin:0 auto;padding:0 24px;}
+nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid #f0e6d3;}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.logo{font-size:1.35rem;font-weight:800;color:var(--dark);}
+.logo span{color:var(--red);}
+.nav-links{display:flex;gap:4px;}
+.nav-links a{padding:7px 13px;border-radius:8px;font-size:.85rem;font-weight:500;color:#475569;transition:all .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--red);background:rgba(220,38,38,.06);}
+.btn{display:inline-flex;align-items:center;gap:6px;background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:25px;font-size:.86rem;font-weight:600;transition:all .2s;}
+.btn:hover{background:var(--orange);transform:translateY(-1px);}
+.btn-outline{background:#fff;color:var(--red);border:2px solid var(--red);}
+.btn-outline:hover{background:var(--red);color:#fff;}
+.hero{position:relative;min-height:580px;display:flex;align-items:center;background:linear-gradient(135deg,rgba(26,10,0,.88) 0%,rgba(220,38,38,.45) 100%),url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1800&q=85') center/cover;}
+.hero-content{color:#fff;max-width:580px;position:relative;z-index:2;}
+.hero-tag{display:inline-block;background:rgba(234,88,12,.2);border:1.5px solid rgba(234,88,12,.4);color:#fb923c;padding:4px 14px;border-radius:20px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.15;margin-bottom:14px;}
+.hero h1 span{color:#fb923c;}
+.hero p{color:rgba(255,255,255,.75);font-size:.92rem;line-height:1.75;margin-bottom:24px;}
+.section{padding:64px 0;}
+.bg-white{background:#fff;}.bg-cream{background:var(--cream);}
+.sec-title{font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--dark);margin-bottom:6px;}
+.sec-sub{color:#78350f;font-size:.88rem;}
+.sec-header{margin-bottom:36px;}.sec-header.centered{text-align:center;}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;}
+.menu-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid #f0e6d3;transition:all .25s;}
+.menu-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.1);}
+.menu-img{position:relative;height:200px;overflow:hidden;}
+.menu-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.menu-card:hover .menu-img img{transform:scale(1.06);}
+.menu-badge{position:absolute;top:10px;left:10px;background:var(--red);color:#fff;font-size:.65rem;font-weight:700;padding:3px 9px;border-radius:20px;}
+.menu-info{padding:14px;}
+.menu-cat{font-size:.7rem;color:var(--orange);font-weight:600;text-transform:uppercase;margin-bottom:3px;}
+.menu-name{font-size:.95rem;font-weight:700;margin-bottom:5px;}
+.menu-desc{font-size:.78rem;color:#78350f;line-height:1.5;margin-bottom:10px;}
+.menu-footer{display:flex;align-items:center;justify-content:space-between;}
+.menu-price{font-size:1rem;font-weight:800;color:var(--red);}
+.btn-order{background:var(--red);color:#fff;border:none;padding:7px 16px;border-radius:20px;font-size:.76rem;font-weight:600;}
+.stat-strip{background:var(--dark);padding:40px 0;}
+.strip-inner{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;}
+.strip-stat{padding:16px;border-right:1px solid rgba(255,255,255,.1);}
+.strip-n{font-size:1.8rem;font-weight:800;color:#fb923c;}
+.strip-l{font-size:.74rem;color:rgba(255,255,255,.5);margin-top:3px;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.testi-card{background:#fff;border-radius:var(--radius);padding:20px;border:1px solid #f0e6d3;}
+.toast-c{position:fixed;bottom:22px;left:22px;z-index:500;display:flex;flex-direction:column;gap:7px;}
+.toast{background:var(--dark);color:#fff;padding:11px 17px;border-radius:10px;font-size:.83rem;animation:fadeUp .3s;border-left:3px solid var(--red);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+footer{background:var(--dark);color:rgba(255,255,255,.55);padding:48px 0 0;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:36px;}
+.footer-col h5{color:#fff;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;}
+.footer-col ul li{margin-bottom:7px;}
+.footer-col a{font-size:.81rem;transition:color .2s;}
+.footer-col a:hover{color:var(--orange);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding:18px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+@media(max-width:768px){.nav-links{display:none;}.strip-inner{grid-template-columns:1fr 1fr;}.testi-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head><body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Warung<span>Nusantara</span></a>
+    <ul class="nav-links">
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="reservasi.html">Reservasi</a></li>
+      <li><a href="about.html">Tentang</a></li>
+      <li><a href="contact.html">Kontak</a></li>
+    </ul>
+    <div style="display:flex;gap:8px">
+      <a href="reservasi.html" class="btn btn-outline">📅 Reservasi</a>
+      <a href="menu.html" class="btn">Pesan Sekarang</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-tag">🍽️ Masakan Asli Nusantara</div>
+      <h1>Cita Rasa <span>Autentik</span><br>dari Dapur Nenek</h1>
+      <p>Menyajikan lebih dari 50 masakan tradisional Indonesia dari berbagai daerah, dimasak dengan bumbu rempah pilihan dan resep turun-temurun yang telah bertahan lebih dari 3 generasi.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a href="menu.html" class="btn"><i class="fas fa-utensils"></i> Lihat Menu</a>
+        <a href="reservasi.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.5);color:#fff;background:rgba(255,255,255,.1)"><i class="fas fa-calendar"></i> Reservasi Meja</a>
+      </div>
+      <div style="display:flex;gap:20px;margin-top:22px">
+        <div style="display:flex;align-items:center;gap:6px;font-size:.82rem;color:rgba(255,255,255,.7)"><i class="fas fa-clock" style="color:#fb923c"></i> Buka 10.00–22.00</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:.82rem;color:rgba(255,255,255,.7)"><i class="fas fa-map-marker-alt" style="color:#fb923c"></i> Jl. Malioboro No. 42, Yogyakarta</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stat-strip">
+  <div class="container">
+    <div class="strip-inner">
+      <div class="strip-stat"><div class="strip-n">50+</div><div class="strip-l">Menu Tradisional</div></div>
+      <div class="strip-stat"><div class="strip-n">25K+</div><div class="strip-l">Pelanggan Setia</div></div>
+      <div class="strip-stat"><div class="strip-n">4.9★</div><div class="strip-l">Rating Google</div></div>
+      <div class="strip-stat"><div class="strip-n">1983</div><div class="strip-l">Tahun Berdiri</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="section bg-white">
+  <div class="container">
+    <div class="sec-header" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <div><h2 class="sec-title">Menu Andalan Kami</h2><p class="sec-sub">Dipilih langsung oleh Chef Mbah Sarinem dengan bumbu rempah asli</p></div>
+      <a href="menu.html" style="color:var(--red);font-weight:600;font-size:.86rem">Lihat Semua Menu →</a>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap">
+      <button onclick="filterMenu('semua',this)" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--red);background:var(--red);color:#fff;font-size:.8rem;font-weight:600" class="filt">Semua</button>
+      <button onclick="filterMenu('nasi',this)" style="padding:7px 18px;border-radius:20px;border:1.5px solid #e2e8f0;background:#fff;font-size:.8rem;font-weight:600;cursor:pointer" class="filt">🍚 Nasi</button>
+      <button onclick="filterMenu('sup',this)" style="padding:7px 18px;border-radius:20px;border:1.5px solid #e2e8f0;background:#fff;font-size:.8rem;font-weight:600;cursor:pointer" class="filt">🍜 Sup & Soto</button>
+      <button onclick="filterMenu('lauk',this)" style="padding:7px 18px;border-radius:20px;border:1.5px solid #e2e8f0;background:#fff;font-size:.8rem;font-weight:600;cursor:pointer" class="filt">🍗 Lauk Pauk</button>
+      <button onclick="filterMenu('minuman',this)" style="padding:7px 18px;border-radius:20px;border:1.5px solid #e2e8f0;background:#fff;font-size:.8rem;font-weight:600;cursor:pointer" class="filt">🥤 Minuman</button>
+    </div>
+    <div class="menu-grid" id="menuGrid"></div>
+  </div>
+</section>
+
+<section style="background:linear-gradient(135deg,var(--dark),#3b0a00);padding:64px 0">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
+    <div>
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=700&q=85" style="width:100%;border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.3)"/>
+    </div>
+    <div>
+      <span style="color:#fb923c;font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:1px">Kisah Kami</span>
+      <h2 style="font-size:1.8rem;font-weight:800;color:#fff;margin:10px 0 16px;line-height:1.3">Tiga Generasi<br>Menjaga Cita Rasa</h2>
+      <p style="color:rgba(255,255,255,.65);line-height:1.8;font-size:.88rem;margin-bottom:14px">Warung Nusantara bermula dari warung kecil Mbah Sarinem di Pasar Beringharjo, Yogyakarta pada tahun 1983. Dengan bumbu rahasia dan ketulusan hati, warung ini berkembang menjadi salah satu destinasi kuliner wajib di Jogja.</p>
+      <p style="color:rgba(255,255,255,.65);line-height:1.8;font-size:.88rem;margin-bottom:20px">Kini dikelola oleh generasi ketiga, kami tetap mempertahankan resep asli sambil menghadirkan pengalaman makan yang lebih nyaman dan modern.</p>
+      <div style="display:flex;gap:20px;margin-bottom:24px">
+        <div style="text-align:center"><div style="font-size:1.6rem;font-weight:800;color:#fb923c">40+</div><div style="font-size:.74rem;color:rgba(255,255,255,.5)">Tahun Pengalaman</div></div>
+        <div style="text-align:center"><div style="font-size:1.6rem;font-weight:800;color:#fb923c">3</div><div style="font-size:.74rem;color:rgba(255,255,255,.5)">Generasi Masak</div></div>
+        <div style="text-align:center"><div style="font-size:1.6rem;font-weight:800;color:#fb923c">50+</div><div style="font-size:.74rem;color:rgba(255,255,255,.5)">Resep Tradisional</div></div>
+      </div>
+      <a href="about.html" class="btn">Baca Kisah Lengkap</a>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-cream">
+  <div class="container">
+    <div class="sec-header centered"><h2 class="sec-title">Kata Pelanggan Kami</h2><p class="sec-sub">Ribuan pelanggan telah merasakan kelezatan autentik Warung Nusantara</p></div>
+    <div class="testi-grid">
+      <div class="testi-card"><div style="color:#f59e0b;margin-bottom:10px">★★★★★</div><p style="font-size:.85rem;line-height:1.75;color:#555;font-style:italic;margin-bottom:14px">"Gudeg di sini paling enak se-Jogja! Sudah langganan sejak 10 tahun lalu. Bumbunya pas banget, tidak terlalu manis. Wajib dicoba!"</p><div style="display:flex;align-items:center;gap:10px"><img src="https://i.pravatar.cc/40?img=1" style="width:40px;height:40px;border-radius:50%"/><div><strong style="font-size:.84rem">Budi P.</strong><span style="display:block;font-size:.72rem;color:#94a3b8">Yogyakarta</span></div></div></div>
+      <div class="testi-card" style="border-color:var(--red)"><div style="color:#f59e0b;margin-bottom:10px">★★★★★</div><p style="font-size:.85rem;line-height:1.75;color:#555;font-style:italic;margin-bottom:14px">"Soto Betawi terbaik yang pernah saya coba! Kuahnya kental, dagingnya empuk, dan harganya sangat terjangkau. Tempat ini juara!"</p><div style="display:flex;align-items:center;gap:10px"><img src="https://i.pravatar.cc/40?img=9" style="width:40px;height:40px;border-radius:50%"/><div><strong style="font-size:.84rem">Rina S.</strong><span style="display:block;font-size:.72rem;color:#94a3b8">Jakarta</span></div></div></div>
+      <div class="testi-card"><div style="color:#f59e0b;margin-bottom:10px">★★★★★</div><p style="font-size:.85rem;line-height:1.75;color:#555;font-style:italic;margin-bottom:14px">"Setiap liburan ke Jogja pasti mampir ke sini. Semua menu enak, porsinya besar, dan tempatnya bersih. Pelayanannya ramah sekali!"</p><div style="display:flex;align-items:center;gap:10px"><img src="https://i.pravatar.cc/40?img=5" style="width:40px;height:40px;border-radius:50%"/><div><strong style="font-size:.84rem">Dewi K.</strong><span style="display:block;font-size:.72rem;color:#94a3b8">Bandung</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--red);padding:56px 0;text-align:center">
+  <div class="container">
+    <h2 style="font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:10px">Reservasi Meja Sekarang</h2>
+    <p style="color:rgba(255,255,255,.8);margin-bottom:24px;font-size:.9rem">Pastikan meja Anda tersedia, terutama di akhir pekan dan hari libur</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="reservasi.html" style="background:#fff;color:var(--red);border:none;padding:13px 28px;border-radius:30px;font-weight:700;font-size:.9rem;display:inline-flex;align-items:center;gap:8px"><i class="fas fa-calendar-check"></i> Reservasi Online</a>
+      <a href="tel:02755512345" style="background:rgba(255,255,255,.15);color:#fff;border:2px solid rgba(255,255,255,.4);padding:13px 28px;border-radius:30px;font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:8px"><i class="fas fa-phone"></i> (0274) 555-1234</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div style="font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:12px">Warung<span style="color:var(--orange)">Nusantara</span></div><p style="font-size:.82rem;line-height:1.7;margin-bottom:12px">Restoran masakan tradisional Indonesia, menjaga cita rasa autentik sejak 1983. Berlokasi di Jl. Malioboro No. 42, Yogyakarta.</p></div>
+      <div class="footer-col"><h5>Menu</h5><ul><li><a href="menu.html">Semua Menu</a></li><li><a href="menu.html?cat=nasi">Nasi & Bubur</a></li><li><a href="menu.html?cat=sup">Sup & Soto</a></li><li><a href="menu.html?cat=lauk">Lauk Pauk</a></li><li><a href="menu.html?cat=minuman">Minuman</a></li></ul></div>
+      <div class="footer-col"><h5>Info</h5><ul><li><a href="about.html">Tentang Kami</a></li><li><a href="reservasi.html">Reservasi</a></li><li><a href="contact.html">Kontak</a></li><li><a href="#">Franchise</a></li></ul></div>
+      <div class="footer-col"><h5>Jam Buka</h5><ul><li><span style="font-size:.81rem">Senin – Jumat</span><br><span style="font-size:.81rem;color:#fb923c">10.00 – 22.00 WIB</span></li><li style="margin-top:6px"><span style="font-size:.81rem">Sabtu – Minggu</span><br><span style="font-size:.81rem;color:#fb923c">09.00 – 23.00 WIB</span></li><li style="margin-top:6px"><a href="tel:027455512345" style="color:#fb923c;font-size:.82rem"><i class="fas fa-phone" style="margin-right:4px"></i>(0274) 555-1234</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p style="font-size:.8rem">© 2026 Warung Nusantara. Cita Rasa Asli Indonesia 🇮🇩</p></div>
+  </div>
+</footer>
+
+<div class="toast-c" id="toastC"></div>
+<style>@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}</style>
+<script>
+const MENU=[
+  {name:'Gudeg Komplit',cat:'nasi',price:35000,badge:'ANDALAN',img:'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=400&q=80',desc:'Gudeg Jogja autentik dengan ayam kampung, krecek, dan telur. Resep Mbah Sarinem sejak 1983.'},
+  {name:'Soto Betawi',cat:'sup',price:28000,badge:'POPULER',img:'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80',desc:'Kuah santan kental dengan daging sapi empuk, kentang, dan tomat segar.'},
+  {name:'Nasi Liwet Solo',cat:'nasi',price:30000,badge:null,img:'https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=400&q=80',desc:'Nasi gurih khas Solo dengan opor ayam, labu siam, dan sambal goreng ati.'},
+  {name:'Rawon Jawa',cat:'sup',price:32000,badge:'SPESIAL',img:'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400&q=80',desc:'Sup hitam khas Jawa Timur dengan kluwek dan daging sapi pilihan yang empuk.'},
+  {name:'Ayam Goreng Rempah',cat:'lauk',price:22000,badge:null,img:'https://images.unsplash.com/photo-1598103442097-8b74394b95c8?w=400&q=80',desc:'Ayam kampung goreng dengan bumbu rempah khas Nusantara yang meresap sempurna.'},
+  {name:'Tempe Bacem',cat:'lauk',price:8000,badge:null,img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=80',desc:'Tempe manis gurih khas Jawa dimasak dengan gula jawa dan bumbu bacem pilihan.'},
+  {name:'Es Dawet Ayu',cat:'minuman',price:12000,badge:'SEGAR',img:'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&q=80',desc:'Minuman tradisional dari cendol, santan segar, dan gula jawa. Segar dan menyehatkan.'},
+  {name:'Wedang Jahe',cat:'minuman',price:10000,badge:null,img:'https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80',desc:'Minuman hangat dari jahe segar, serai, dan gula jawa. Menghangatkan tubuh dan jiwa.'},
+];
+
+function formatPrice(n){return'Rp '+n.toLocaleString('id-ID');}
+function renderMenu(list){
+  document.getElementById('menuGrid').innerHTML=list.map(m=>`
+    <div class="menu-card">
+      <div class="menu-img">
+        <img src="${m.img}" alt="${m.name}" loading="lazy"/>
+        ${m.badge?`<span class="menu-badge">${m.badge}</span>`:''}
+      </div>
+      <div class="menu-info">
+        <div class="menu-cat">${m.cat}</div>
+        <div class="menu-name">${m.name}</div>
+        <div class="menu-desc">${m.desc}</div>
+        <div class="menu-footer">
+          <div class="menu-price">${formatPrice(m.price)}</div>
+          <button class="btn-order" onclick="showToast('✅ ${m.name} ditambahkan ke pesanan','success')">Pesan</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+function filterMenu(cat, el){
+  document.querySelectorAll('.filt').forEach(b=>{b.style.background='#fff';b.style.color='#475569';b.style.borderColor='#e2e8f0';});
+  el.style.background='var(--red)';el.style.color='#fff';el.style.borderColor='var(--red)';
+  renderMenu(cat==='semua'?MENU:MENU.filter(m=>m.cat===cat));
+}
+function showToast(m,t){const c=document.getElementById('toastC');const el=document.createElement('div');el.className='toast';el.textContent=m;c.appendChild(el);setTimeout(()=>el.remove(),3000);}
+renderMenu(MENU);
+</script>
+</body></html>
